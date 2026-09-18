@@ -1,6 +1,9 @@
 tasks = []
 
 def add_task(name):
+    if name in tasks:
+        print(f"'{name}' already exists, skipping")
+        return
     tasks.append(name)
 
 def show_tasks():
@@ -15,6 +18,7 @@ def delete_task(name):
     tasks.remove(name)
 
 def main():
+    add_task("Learn Git")
     add_task("Learn Git")
     show_tasks()
     delete_task("Learn Git")
